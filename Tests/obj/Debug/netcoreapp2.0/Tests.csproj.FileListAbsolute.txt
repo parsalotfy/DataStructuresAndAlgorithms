@@ -1,0 +1,9 @@
+C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\Tests\bin\Debug\netcoreapp2.0\Tests.deps.json
+C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\Tests\bin\Debug\netcoreapp2.0\Tests.dll
+C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\Tests\bin\Debug\netcoreapp2.0\Tests.pdb
+C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\Tests\obj\Debug\netcoreapp2.0\Tests.csprojAssemblyReference.cache
+C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\Tests\obj\Debug\netcoreapp2.0\Tests.csproj.CoreCompileInputs.cache
+C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\Tests\obj\Debug\netcoreapp2.0\Tests.AssemblyInfoInputs.cache
+C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\Tests\obj\Debug\netcoreapp2.0\Tests.AssemblyInfo.cs
+C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\Tests\obj\Debug\netcoreapp2.0\Tests.dll
+C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\Tests\obj\Debug\netcoreapp2.0\Tests.pdb
