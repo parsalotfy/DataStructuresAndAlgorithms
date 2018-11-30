@@ -7,13 +7,13 @@ namespace DataStructures
 
         }
 
-        public Edge(INode<T> a_Node , INode<T> another_Node)
+        public Edge(INode<T> a_Node, INode<T> another_Node)
         {
-            A_Node=a_Node;
-            Another_Node=another_Node;
+            A_Node = a_Node;
+            Another_Node = another_Node;
         }
 
-        public Edge(T a_Node , T another_Node)
+        public Edge(T a_Node, T another_Node)
         {
             A_Node = new Node<T>(a_Node);
             Another_Node = new Node<T>(another_Node);

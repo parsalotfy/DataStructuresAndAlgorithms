@@ -4,12 +4,12 @@ namespace DataStructures
     {
         public Node()
         {
-            
+
         }
 
         public Node(T nodeValue)
         {
-            Value=nodeValue;
+            Value = nodeValue;
         }
 
         public T Value { get; set; }
