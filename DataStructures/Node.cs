@@ -30,18 +30,21 @@ namespace DataStructures
             Value = nodeValue;
         }
 
+
+        private T _value;
         public new T Value
         {
             get
             {
-                return Value;
+                return _value;
             }
             set
             {
-                Value = value;
+                _value = value;
                 base.Value = value;
             }
         }
+
     }
 }
 
