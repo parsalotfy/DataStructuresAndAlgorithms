@@ -2,7 +2,8 @@
 
 namespace Tests
 {
-    public class Class1
+    public class NodeTest
     {
+
     }
 }
