@@ -25,7 +25,7 @@ namespace DataStructures
         public INode Another_Node { get; set; }
     }
 
-    public class Edge<T> : IEdge<T>
+    public class Edge<T> : Edge, IEdge<T>
     {
         public Edge()
         {
@@ -44,8 +44,8 @@ namespace DataStructures
             Another_Node = new Node<T>(another_Node);
         }
 
-        public INode<T> A_Node { get; set; }
-        public INode<T> Another_Node { get; set; }
+        public new INode<T> A_Node { get; set; }
+        public new INode<T> Another_Node { get; set; }
 
         INode IEdge.A_Node { get { return A_Node; } set { A_Node = (INode<T>)value; } }
         INode IEdge.Another_Node { get => Another_Node; set => throw new System.NotImplementedException(); }
