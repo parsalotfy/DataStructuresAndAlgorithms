@@ -44,7 +44,30 @@ namespace DataStructures
             Another_Node = new Node<T>(another_Node);
         }
 
-        public new INode<T> A_Node { get; set; }
-        public new INode<T> Another_Node { get; set; }
+        public new INode<T> A_Node
+        {
+            get
+            {
+                return A_Node;
+            }
+            set
+            {
+                A_Node=value;
+                base.A_Node=value;
+            }
+        }
+        
+        public new INode<T> Another_Node 
+        {
+             get
+            {
+                return Another_Node;
+            }
+            set
+            {
+                Another_Node=value;
+                base.Another_Node=value;
+            }
+        }
     }
 }
