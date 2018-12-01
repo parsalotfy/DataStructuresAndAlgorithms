@@ -18,20 +18,22 @@ namespace DataStructures
 
 
 
-    public class Node<T> : INode<T>
+    public class Node<T> : Node, INode<T>
     {
-        public Node()
+        public Node():base()
         {
 
         }
 
-        public Node(T nodeValue)
+        public Node(T nodeValue):base(nodeValue)
         {
-            Value = nodeValue;
+            //Value = nodeValue;
         }
 
-        public T Value { get; set; }
-        object INode.Value { get { return Value; } set { Value = (T)value; } }
+        public new T Value { get; set; }
+        
+        //T INode<T>.Value { get; set; }
+        //object INode.Value { get { return Value; } set { Value = (T)value; } }
     }
 }
 
