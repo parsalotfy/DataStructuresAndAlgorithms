@@ -20,12 +20,12 @@ namespace DataStructures
 
     public class Node<T> : Node, INode<T>
     {
-        public Node():base()
+        public Node() : base()
         {
 
         }
 
-        public Node(T nodeValue):base(nodeValue)
+        public Node(T nodeValue) : base(nodeValue)
         {
             Value = nodeValue;
         }
