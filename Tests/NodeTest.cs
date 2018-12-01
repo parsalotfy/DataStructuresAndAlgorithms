@@ -15,7 +15,6 @@ namespace Tests
             // Act
             n.Value = 6;
             int a2 = n.Value;
-            //object o = ((Node)n).Value;
 
             // Assert
             Assert.Equal(6, a2);
@@ -30,10 +29,10 @@ namespace Tests
 
             // Act
             n.Value = 6;
-            object o = ((Node)n).Value;
+            object a2 = ((Node)n).Value;
 
             // Assert
-            Assert.Equal(6, (int)(o) );
+            Assert.Equal(6, a2);
         }
 
     }
