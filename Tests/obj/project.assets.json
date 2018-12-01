@@ -1676,6 +1676,16 @@
         "build": {
           "build/netcoreapp1.0/xunit.runner.visualstudio.props": {}
         }
+      },
+      "DataStructures/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/DataStructures.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataStructures.dll": {}
+        }
       }
     }
   },
@@ -5743,10 +5753,16 @@
         "xunit.runner.visualstudio.2.4.1.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "DataStructures/1.0.0": {
+      "type": "project",
+      "path": "../DataStructures/DataStructures.csproj",
+      "msbuildProject": "../DataStructures/DataStructures.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
+      "DataStructures >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 15.9.0",
       "Microsoft.NETCore.App >= 2.0.0",
       "xunit >= 2.4.1",
@@ -5760,11 +5776,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Parsa\\Desktop\\DataStructuresAndAlgorithms\\Tests\\Tests.csproj",
+      "projectUniqueName": "C:\\Users\\Parsa\\Desktop\\DataStructuresAndAlgorithms\\Tests\\Tests.csproj",
       "projectName": "Tests",
-      "projectPath": "c:\\Users\\Parsa\\Desktop\\DataStructuresAndAlgorithms\\Tests\\Tests.csproj",
+      "projectPath": "C:\\Users\\Parsa\\Desktop\\DataStructuresAndAlgorithms\\Tests\\Tests.csproj",
       "packagesPath": "C:\\Users\\Parsa\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Parsa\\Desktop\\DataStructuresAndAlgorithms\\Tests\\obj\\",
+      "outputPath": "C:\\Users\\Parsa\\Desktop\\DataStructuresAndAlgorithms\\Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5782,7 +5798,11 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Parsa\\Desktop\\DataStructuresAndAlgorithms\\DataStructures\\DataStructures.csproj": {
+              "projectPath": "C:\\Users\\Parsa\\Desktop\\DataStructuresAndAlgorithms\\DataStructures\\DataStructures.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

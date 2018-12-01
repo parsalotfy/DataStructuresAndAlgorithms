@@ -7,3 +7,11 @@ C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\Tests\obj\Debug\netcoreapp2.0
 C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\Tests\obj\Debug\netcoreapp2.0\Tests.AssemblyInfo.cs
 C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\Tests\obj\Debug\netcoreapp2.0\Tests.dll
 C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\Tests\obj\Debug\netcoreapp2.0\Tests.pdb
+C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\Tests\bin\Debug\netcoreapp2.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\Tests\bin\Debug\netcoreapp2.0\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\Tests\bin\Debug\netcoreapp2.0\xunit.runner.utility.netcoreapp10.dll
+C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\Tests\bin\Debug\netcoreapp2.0\Tests.runtimeconfig.json
+C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\Tests\bin\Debug\netcoreapp2.0\Tests.runtimeconfig.dev.json
+C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\Tests\bin\Debug\netcoreapp2.0\DataStructures.dll
+C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\Tests\bin\Debug\netcoreapp2.0\DataStructures.pdb
+C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\Tests\obj\Debug\netcoreapp2.0\Tests.csproj.CopyComplete
