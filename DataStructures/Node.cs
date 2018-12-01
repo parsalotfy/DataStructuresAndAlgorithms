@@ -27,13 +27,10 @@ namespace DataStructures
 
         public Node(T nodeValue):base(nodeValue)
         {
-            //Value = nodeValue;
+            Value = nodeValue;
         }
 
         public new T Value { get; set; }
-        
-        //T INode<T>.Value { get; set; }
-        //object INode.Value { get { return Value; } set { Value = (T)value; } }
     }
 }
 
