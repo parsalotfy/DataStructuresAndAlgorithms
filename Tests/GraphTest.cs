@@ -9,7 +9,10 @@ namespace Tests
         public void NodeTest()
         {
             // Arrange
-
+            Node<int> n = new Node<int>(5);
+            int a1 = n.Value;
+            n.Value=6;
+            int a2=n.Value;
             // Act
 
             // Assert
