@@ -12,6 +12,15 @@
             "args": ["build"],
             "cwd": "${workspaceFolder}/DataStructures",
             "console": "integratedTerminal"
+        },
+        {
+            "name": "Run_Tests",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "dotnet",
+            "args": ["test"],
+            "cwd": "${workspaceFolder}/Tests",
+            "console": "integratedTerminal"
         }
     ]
 }
