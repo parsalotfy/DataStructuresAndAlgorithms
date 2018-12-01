@@ -1,0 +1,8 @@
+language: csharp
+workspace: workspace.code-workspace
+dotnet: 2.0
+mono: none
+dist: trusty
+script:
+  - dotnet build DataStructures
+  - dotnet test Tests/Tests.csproj
