@@ -30,7 +30,18 @@ namespace DataStructures
             Value = nodeValue;
         }
 
-        public new T Value { get; set; }
+        public new T Value
+        {
+            get
+            {
+                return Value;
+            }
+            set
+            {
+                Value = value;
+                base.Value = value;
+            }
+        }
     }
 }
 
