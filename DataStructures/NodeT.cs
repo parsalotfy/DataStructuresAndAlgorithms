@@ -2,14 +2,14 @@ namespace DataStructures
 {
     public class Node<T> : Node, INode<T>
     {
-        public Node() : base()
+        public Node()
         {
 
         }
 
-        public Node(T nodeValue) : base(nodeValue)
+        public Node(T nodeValue)
         {
-            Value = nodeValue;
+            UpdateValue(nodeValue);
         }
 
 
@@ -17,8 +17,8 @@ namespace DataStructures
 
         public virtual void UpdateValue(T nodeValue)
         {
-            base.UpdateValue(nodeValue);
             Value = nodeValue;
+            base.UpdateValue(nodeValue);
         }
     }
 }
