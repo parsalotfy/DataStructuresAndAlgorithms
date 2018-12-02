@@ -14,8 +14,7 @@ namespace Tests
             int b1 = e.Another_Node.Value;
 
             // Act
-            e.A_Node.Value = 7;
-            e.Another_Node.Value = 8;
+            e.UpdateEdge(7,8);
 
             int a2 = e.A_Node.Value;
             int b2 = e.Another_Node.Value;
@@ -34,8 +33,7 @@ namespace Tests
             int b1 = e.Another_Node.Value;
 
             // Act
-            e.A_Node.Value = 7;
-            e.Another_Node.Value = 8;
+            e.UpdateEdge(7,8);
 
             object a2 = ((Edge)e).A_Node.Value;
             object b2 = ((Edge)e).Another_Node.Value;
