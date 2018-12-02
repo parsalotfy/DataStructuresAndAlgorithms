@@ -10,7 +10,7 @@ namespace DataStructures
 
         public Node(object nodeValue)
         {
-            Value = nodeValue;
+            UpdateValue(nodeValue);
         }
 
         public object Value { get; private set; }
