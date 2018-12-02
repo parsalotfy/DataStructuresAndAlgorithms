@@ -13,7 +13,12 @@ namespace DataStructures
             Value = nodeValue;
         }
 
-        public object Value { get; set; }
+        public object Value { get; private set; }
+
+        public virtual void UpdateValue(object nodeValue)
+        {
+            Value = nodeValue;
+        }
     }
 
 
@@ -31,20 +36,13 @@ namespace DataStructures
         }
 
 
-        private T _value;
-        public new T Value
-        {
-            get
-            {
-                return _value;
-            }
-            set
-            {
-                _value = value;
-                base.Value = value;
-            }
-        }
+        public new T Value { get; private set; }
 
+        public virtual void UpdateValue(T nodeValue)
+        {
+            base.UpdateValue(nodeValue);
+            Value = nodeValue;
+        }
     }
 }
 
