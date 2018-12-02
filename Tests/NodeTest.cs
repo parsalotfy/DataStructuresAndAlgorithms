@@ -13,7 +13,7 @@ namespace Tests
             int a1 = n.Value;
 
             // Act
-            n.Value = 6;
+            n.UpdateValue(6);
             int a2 = n.Value;
 
             // Assert
@@ -28,7 +28,7 @@ namespace Tests
             int a1 = n.Value;
 
             // Act
-            n.Value = 6;
+            n.UpdateValue(6);
             object a2 = ((Node)n).Value;
 
             // Assert
