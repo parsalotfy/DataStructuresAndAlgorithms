@@ -11,12 +11,12 @@ namespace DataStructures
 
         }
 
-        public Edge(T a_Node, T another_Node)
+        public Edge(T a_Node, T another_Node) // No need to call base!
         {
             UpdateEdge(a_Node, another_Node);
         }
 
-        public Edge(INode<T> a_Node, INode<T> another_Node)
+        public Edge(INode<T> a_Node, INode<T> another_Node) // No need to call base!
         {
             UpdateEdge(a_Node, another_Node);
         }
