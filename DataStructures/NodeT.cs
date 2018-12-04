@@ -9,16 +9,23 @@ namespace DataStructures
 
         public Node(T nodeValue)
         {
-            UpdateValue(nodeValue);
+            Value = nodeValue;
         }
 
 
-        public new T Value { get; private set; }
 
-        public virtual void UpdateValue(T nodeValue)
+        private T _value;
+        public new T Value
         {
-            Value = nodeValue;
-            base.UpdateValue(nodeValue);
+            get { return _value; }
+            set { UpdateValue(value); }
+        }
+
+        // Just should be used in Setter
+        private void UpdateValue(T nodeValue)
+        {
+            _value = nodeValue;
+            base.Value = nodeValue;
         }
     }
 }
