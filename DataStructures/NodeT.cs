@@ -18,15 +18,13 @@ namespace DataStructures
         public new T Value
         {
             get { return _value; }
-            set { UpdateValue(value); }
+            set
+            {
+                _value = value;
+                base.Value = value;
+            }
         }
 
-        // Just should be used in Setter
-        private void UpdateValue(T nodeValue)
-        {
-            _value = nodeValue;
-            base.Value = nodeValue;
-        }
     }
 }
 

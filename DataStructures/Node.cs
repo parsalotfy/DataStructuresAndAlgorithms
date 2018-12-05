@@ -26,7 +26,7 @@ namespace DataStructures
         public object Value
         {
             get { return _value; }
-            set { UpdateValue(value); }
+            set { _value = value; }
         }
 
 
@@ -37,11 +37,6 @@ namespace DataStructures
 
         #region Methods
 
-        // Just should be used in Setter
-        private void UpdateValue(object nodeValue)
-        {
-            _value = nodeValue;
-        }
 
         #endregion Methods
 
