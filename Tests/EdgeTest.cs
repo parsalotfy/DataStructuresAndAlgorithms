@@ -3,45 +3,79 @@ using Xunit;
 
 namespace Tests
 {
+
+    // Constructor
+    // Setter
+    // Parent
     public class EdgeTest
     {
+
         [Fact]
-        public void EdgeOfT_Value_Test()
+        public void Edge_Constructor_Object_Test()
         {
             // Arrange
-            Edge<int> e = new Edge<int>(2, 3);
-            int a1 = e.A_Node.Value;
-            int b1 = e.Another_Node.Value;
+            Edge e = new Edge(2, 3);
 
             // Act
-            e.UpdateEdge(7,8);
-
-            int a2 = e.A_Node.Value;
-            int b2 = e.Another_Node.Value;
 
             // Assert
-            Assert.Equal(7, a2);
-            Assert.Equal(8, b2);
+            Assert.Equal(2, e.A_Node.Value);
+            Assert.Equal(3, e.Another_Node.Value);
+        }
+
+
+
+        [Fact]
+        public void Edge_Constructor_INode_Test()
+        {
+            // Arrange
+            INode n1 = new Node(2);
+            INode n2 = new Node(3);
+
+            Edge e = new Edge(n1, n2);
+
+            // Act
+
+            // Assert
+            Assert.Equal(2, e.A_Node.Value);
+            Assert.Equal(3, e.Another_Node.Value);
+        }
+
+
+
+        [Fact]
+        public void Edge_Setter_Test()
+        {
+            // Arrange
+            Edge e = new Edge();
+            INode a = new Node(2);
+            INode b = new Node(3);
+
+            // Act
+            e.A_Node = a;
+            e.Another_Node = b;
+
+            // Assert
+            Assert.Equal(2, e.A_Node.Value);
+            Assert.Equal(3, e.Another_Node.Value);
         }
 
         [Fact]
-        public void EdgeOfT_BaseValue_Test()
+        public void Edge_INodeSetter_Test()
         {
             // Arrange
-            Edge<int> e = new Edge<int>(2, 3);
-            int a1 = e.A_Node.Value;
-            int b1 = e.Another_Node.Value;
+            Edge e = new Edge();
 
             // Act
-            e.UpdateEdge(7,8);
+            e.A_Node.Value = 2;
+            e.Another_Node.Value = 3;
 
-            object a2 = ((Edge)e).A_Node.Value;
-            object b2 = ((Edge)e).Another_Node.Value;
 
             // Assert
-            Assert.Equal(7, a2);
-            Assert.Equal(8, b2);
+            Assert.Equal(2, e.A_Node.Value);
+            Assert.Equal(3, e.Another_Node.Value);
         }
 
     }
+
 }
