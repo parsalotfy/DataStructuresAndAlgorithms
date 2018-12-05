@@ -8,7 +8,8 @@ namespace DataStructures
 
         public Edge()
         {
-
+            A_Node=new Node<T>();
+            Another_Node=new Node<T>();
         }
 
         public Edge(T a_Node, T another_Node) // No need to call base!
@@ -31,7 +32,11 @@ namespace DataStructures
         public new INode<T> A_Node
         {
             get { return _a_Node; }
-            set { _a_Node = value; }
+            set
+            {
+                _a_Node = value;
+                base.A_Node = value;
+            }
         }
 
 
@@ -39,7 +44,11 @@ namespace DataStructures
         public new INode<T> Another_Node
         {
             get { return _another_Node; }
-            set { _another_Node = value; }
+            set
+            {
+                _another_Node = value;
+                base.Another_Node = value;
+            }
         }
 
 
@@ -72,22 +81,6 @@ namespace DataStructures
         }
 
 
-
-
-        // Just should be used in Setter
-        private void Update_A_Node(INode<T> a_NodeValue)
-        {
-            _a_Node = a_NodeValue;
-            base.A_Node = a_NodeValue;
-        }
-
-
-        // Just should be used in Setter
-        private void Update_Another_Node(INode<T> another_NodeValue)
-        {
-            _another_Node = another_NodeValue;
-            base.Another_Node = another_NodeValue;
-        }
 
         public void UpdateEdge(INode<T> a_NodeValue, INode<T> another_NodeValue)
         {
