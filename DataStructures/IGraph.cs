@@ -4,14 +4,7 @@ namespace DataStructures
 {
     public interface IGraph
     {
-        ISet<INode> Nodes { get; set; }
-        ISet<IEdge> Edges { get; set; }
+        IEnumerable<INode> Nodes { get; }
+        IEnumerable<IEdge> Edges { get; }
     }
-
-// Ctors
-// Ctors chaining
-// IEquality
-// Update method for Node and Edge
-// add overloads of Update(object) to IEdge and IEdgeT
-//
 }
