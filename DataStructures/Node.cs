@@ -21,15 +21,7 @@ namespace DataStructures
 
         #region Properties
 
-
-        private object _value;
-        public object Value
-        {
-            get { return _value; }
-            set { _value = value; }
-        }
-
-
+        public object Value { get; set; }
 
         #endregion Properties
 

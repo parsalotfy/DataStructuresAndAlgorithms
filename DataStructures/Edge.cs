@@ -28,20 +28,8 @@ namespace DataStructures
         #region  Properties
 
 
-        private INode _a_Node;
-        public INode A_Node
-        {
-            get { return _a_Node; }
-            set { _a_Node = value; }
-        }
-
-
-        private INode _another_Node;
-        public INode Another_Node
-        {
-            get { return _another_Node; }
-            set { _another_Node = value; }
-        }
+        public INode A_Node { get; set; }
+        public INode Another_Node { get; set; }
 
 
 
