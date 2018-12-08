@@ -3,13 +3,8 @@ using Xunit;
 
 namespace Tests
 {
-
-    // Constructor
-    // Setter
-    // Parent
     public class EdgeTest
     {
-
         [Fact]
         public void Edge_Constructor_Object_Test()
         {
@@ -22,7 +17,6 @@ namespace Tests
             Assert.Equal(2, e.A_Node.Value);
             Assert.Equal(3, e.Another_Node.Value);
         }
-
 
 
         [Fact]
@@ -40,42 +34,5 @@ namespace Tests
             Assert.Equal(2, e.A_Node.Value);
             Assert.Equal(3, e.Another_Node.Value);
         }
-
-
-
-        [Fact]
-        public void Edge_Setter_Test()
-        {
-            // Arrange
-            Edge e = new Edge();
-            INode a = new Node(2);
-            INode b = new Node(3);
-
-            // Act
-            e.A_Node = a;
-            e.Another_Node = b;
-
-            // Assert
-            Assert.Equal(2, e.A_Node.Value);
-            Assert.Equal(3, e.Another_Node.Value);
-        }
-
-        [Fact]
-        public void Edge_INodeSetter_Test()
-        {
-            // Arrange
-            Edge e = new Edge();
-
-            // Act
-            e.A_Node.Value = 2;
-            e.Another_Node.Value = 3;
-
-
-            // Assert
-            Assert.Equal(2, e.A_Node.Value);
-            Assert.Equal(3, e.Another_Node.Value);
-        }
-
     }
-
 }

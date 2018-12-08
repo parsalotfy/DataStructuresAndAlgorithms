@@ -3,11 +3,6 @@ using Xunit;
 
 namespace Tests
 {
-
-    // Constructor
-    // Setter
-    // Parent
-
     public class NodeTTest
     {
         [Fact]
@@ -34,36 +29,5 @@ namespace Tests
             // Assert
             Assert.Equal(5, ((INode)n).Value);
         }
-
-
-
-
-        [Fact]
-        public void NodeT_Setter_Test()
-        {
-            // Arrange
-            Node<int> n = new Node<int>();
-
-            // Act
-            n.Value = 5;
-
-            // Assert
-            Assert.Equal(5, n.Value);
-        }
-
-
-        [Fact]
-        public void NodeT_Setter_Base_Test()
-        {
-            // Arrange
-            Node<int> n = new Node<int>();
-
-            // Act
-            n.Value = 5;
-
-            // Assert
-            Assert.Equal(5, ((INode)n).Value);
-        }
-
     }
 }

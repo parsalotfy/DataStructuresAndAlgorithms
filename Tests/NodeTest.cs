@@ -5,9 +5,6 @@ namespace Tests
 {
     public class NodeTest
     {
-        // Constructor
-        // Setter
-
         [Fact]
         public void Node_Constructor_Test()
         {
@@ -20,21 +17,16 @@ namespace Tests
             Assert.Equal(5, n.Value);
         }
 
-
         [Fact]
         public void Node_Setter_Test()
         {
             // Arrange
-            Node n = new Node();
+            Node n = new Node(6);
 
             // Act
-            n.Value = 6;
 
             // Assert
             Assert.Equal(6, n.Value);
         }
-
-
-
     }
 }
