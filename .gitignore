@@ -1,0 +1,5 @@
+# Build results
+*.dll
+*.pdb
+*.cache
+*.props
