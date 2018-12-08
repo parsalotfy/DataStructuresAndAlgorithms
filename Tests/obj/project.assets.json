@@ -5776,11 +5776,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Parsa\\Desktop\\DataStructuresAndAlgorithms\\Tests\\Tests.csproj",
+      "projectUniqueName": "c:\\Users\\Parsa\\Desktop\\DataStructuresAndAlgorithms\\Tests\\Tests.csproj",
       "projectName": "Tests",
-      "projectPath": "C:\\Users\\Parsa\\Desktop\\DataStructuresAndAlgorithms\\Tests\\Tests.csproj",
+      "projectPath": "c:\\Users\\Parsa\\Desktop\\DataStructuresAndAlgorithms\\Tests\\Tests.csproj",
       "packagesPath": "C:\\Users\\Parsa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Parsa\\Desktop\\DataStructuresAndAlgorithms\\Tests\\obj\\",
+      "outputPath": "c:\\Users\\Parsa\\Desktop\\DataStructuresAndAlgorithms\\Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5799,8 +5799,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\Parsa\\Desktop\\DataStructuresAndAlgorithms\\DataStructures\\DataStructures.csproj": {
-              "projectPath": "C:\\Users\\Parsa\\Desktop\\DataStructuresAndAlgorithms\\DataStructures\\DataStructures.csproj"
+            "c:\\Users\\Parsa\\Desktop\\DataStructuresAndAlgorithms\\DataStructures\\DataStructures.csproj": {
+              "projectPath": "c:\\Users\\Parsa\\Desktop\\DataStructuresAndAlgorithms\\DataStructures\\DataStructures.csproj"
             }
           }
         }
