@@ -2,6 +2,6 @@
 {
     public interface INode
     {
-        object Value { get; set; }
+        object Value { get; }
     }
 }
