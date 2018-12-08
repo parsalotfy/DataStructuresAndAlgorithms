@@ -41,6 +41,7 @@ namespace DataStructures
         private HashSet<IEdge> _edges;
         public IEnumerable<IEdge> Edges { get { return _edges; } }
 
+
         public bool AddNode(INode node)
         {
             return _nodes.Add(node);
@@ -82,9 +83,6 @@ namespace DataStructures
         {
             return _edges.Remove(edge);
         }
-
-
-        
 
     }
 }
