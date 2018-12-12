@@ -25,6 +25,13 @@ namespace Tests
             nodes.Add(n3);
             nodes.Add(n4);
 
+            Node<int> a = new Node<int>(1);
+            var b = (Node)a;
+            
+            // IEqualityComparer<INode> intcomparer = sample;
+            // IEqualityComparer<INode<int>> sample = EqualityComparer<INode<int>>.Default;
+            
+
 
 
 
