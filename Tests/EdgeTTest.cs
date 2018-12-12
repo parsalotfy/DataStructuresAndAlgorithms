@@ -27,8 +27,8 @@ namespace Tests
             // Act
 
             // Assert
-            Assert.Equal(2, ((IEdge)e).A_Node.Value);
-            Assert.Equal(3, ((IEdge)e).Another_Node.Value);
+            Assert.Equal(2, ((IEdge<object>)e).A_Node.Value);
+            Assert.Equal(3, ((IEdge<object>)e).Another_Node.Value);
         }
 
         [Fact]
@@ -59,8 +59,8 @@ namespace Tests
             // Act
 
             // Assert
-            Assert.Equal(2, ((IEdge)e).A_Node.Value);
-            Assert.Equal(3, ((IEdge)e).Another_Node.Value);
+            Assert.Equal(2, ((IEdge<object>)e).A_Node.Value);
+            Assert.Equal(3, ((IEdge<object>)e).Another_Node.Value);
         }
     }
 }

@@ -27,7 +27,7 @@ namespace Tests
             // Act
 
             // Assert
-            Assert.Equal(5, ((INode)n).Value);
+            Assert.Equal(5, ((INode<object>)n).Value);
         }
     }
 }

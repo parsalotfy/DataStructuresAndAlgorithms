@@ -9,7 +9,7 @@ namespace Tests
         public void Edge_Constructor_Object_Test()
         {
             // Arrange
-            Edge e = new Edge(2, 3);
+            Edge<object> e = new Edge<object>(2, 3);
 
             // Act
 
@@ -23,10 +23,10 @@ namespace Tests
         public void Edge_Constructor_INode_Test()
         {
             // Arrange
-            INode n1 = new Node(2);
-            INode n2 = new Node(3);
+            INode<object> n1 = new Node<object>(2);
+            INode<object> n2 = new Node<object>(3);
 
-            Edge e = new Edge(n1, n2);
+            Edge<object> e = new Edge<object>(n1, n2);
 
             // Act
 

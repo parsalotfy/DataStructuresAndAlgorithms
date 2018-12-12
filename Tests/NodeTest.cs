@@ -9,7 +9,7 @@ namespace Tests
         public void Node_Constructor_Test()
         {
             // Arrange
-            Node n = new Node(5);
+            Node<object> n = new Node<object>(5);
 
             // Act
 
@@ -21,7 +21,7 @@ namespace Tests
         public void Node_Setter_Test()
         {
             // Arrange
-            Node n = new Node(6);
+            Node<object> n = new Node<object>(6);
 
             // Act
 
