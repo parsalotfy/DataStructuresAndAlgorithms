@@ -5,14 +5,14 @@ namespace DataStructures
 {
     public class Graph : IGraph
     {
-        public Graph()
-        {
-            _nodes = new HashSet<INode>();
-            _edges = new HashSet<IEdge>();
-        }
+        // public Graph()
+        // {
+        //     _nodes = new HashSet<INode>();
+        //     _edges = new HashSet<IEdge>();
+        // }
 
-        public Graph(EqualityComparer<INode> nodeEqualityComparer,
-                    EqualityComparer<IEdge> edgeEqualityComparer)
+        public Graph(IEqualityComparer<INode> nodeEqualityComparer,
+                     IEqualityComparer<IEdge> edgeEqualityComparer)
         {
             _nodes = new HashSet<INode>(nodeEqualityComparer);
             _edges = new HashSet<IEdge>(edgeEqualityComparer);
@@ -26,8 +26,8 @@ namespace DataStructures
 
         public Graph(IEnumerable<INode> nodes,
                     IEnumerable<IEdge> edges,
-                    EqualityComparer<INode> nodeEqualityComparer,
-                    EqualityComparer<IEdge> edgeEqualityComparer)
+                    IEqualityComparer<INode> nodeEqualityComparer,
+                    IEqualityComparer<IEdge> edgeEqualityComparer)
         {
             _nodes = new HashSet<INode>(nodes, nodeEqualityComparer);
             _edges = new HashSet<IEdge>(edges, edgeEqualityComparer);
