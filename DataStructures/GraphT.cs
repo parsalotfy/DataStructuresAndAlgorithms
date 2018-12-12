@@ -2,26 +2,23 @@ using System.Collections.Generic;
 
 namespace DataStructures
 {
-    public class Graph<T> : Graph, IGraph<T>
+    public class Graph<T> : IGraph<T>
     {
 
-        // public Graph() 
-        // //: base()
-        // {
-        //     _nodes = new HashSet<INode<T>>();
-        //     _edges = new HashSet<IEdge<T>>();
-        // }
+        public Graph()
+        {
+            _nodes = new HashSet<INode<T>>();
+            _edges = new HashSet<IEdge<T>>();
+        }
 
         public Graph(IEqualityComparer<INode<T>> nodeEqualityComparer,
                      IEqualityComparer<IEdge<T>> edgeEqualityComparer)
-        : base(nodeEqualityComparer, edgeEqualityComparer)
         {
             _nodes = new HashSet<INode<T>>(nodeEqualityComparer);
             _edges = new HashSet<IEdge<T>>(edgeEqualityComparer);
         }
 
         public Graph(IEnumerable<INode<T>> nodes, IEnumerable<IEdge<T>> edges)
-        : base(nodes, edges)
         {
             _nodes = new HashSet<INode<T>>(nodes);
             _edges = new HashSet<IEdge<T>>(edges);
@@ -31,7 +28,6 @@ namespace DataStructures
                     IEnumerable<IEdge<T>> edges,
                     IEqualityComparer<INode<T>> nodeEqualityComparer,
                     IEqualityComparer<IEdge<T>> edgeEqualityComparer)
-        : base(nodes, edges, nodeEqualityComparer, edgeEqualityComparer)
         {
             _nodes = new HashSet<INode<T>>(nodes, nodeEqualityComparer);
             _edges = new HashSet<IEdge<T>>(edges, edgeEqualityComparer);
@@ -42,13 +38,13 @@ namespace DataStructures
 
 
         private HashSet<INode<T>> _nodes;
-        public new IEnumerable<INode<T>> Nodes
+        public IEnumerable<INode<T>> Nodes
         {
             get { return _nodes; }
         }
 
         private HashSet<IEdge<T>> _edges;
-        public new IEnumerable<IEdge<T>> Edges
+        public IEnumerable<IEdge<T>> Edges
         {
             get { return _edges; }
         }

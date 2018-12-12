@@ -1,7 +1,7 @@
 namespace DataStructures
 {
-    public interface INode<T> : INode
+    public interface INode<T>
     {
-        new T Value { get; }
+        T Value { get; }
     }
 }

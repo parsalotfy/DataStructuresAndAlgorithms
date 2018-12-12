@@ -1,8 +1,8 @@
 namespace DataStructures
 {
-    public interface IEdge<T> : IEdge
+    public interface IEdge<T>
     {
-        new INode<T> A_Node { get; }
-        new INode<T> Another_Node { get; }
+        INode<T> A_Node { get; }
+        INode<T> Another_Node { get; }
     }
 }

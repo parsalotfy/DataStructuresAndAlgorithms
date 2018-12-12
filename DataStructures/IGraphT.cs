@@ -2,9 +2,9 @@ using System.Collections.Generic;
 
 namespace DataStructures
 {
-    public interface IGraph<T> : IGraph
+    public interface IGraph<T>
     {
-        new IEnumerable<INode<T>> Nodes { get; }
-        new IEnumerable<IEdge<T>> Edges { get; }
+        IEnumerable<INode<T>> Nodes { get; }
+        IEnumerable<IEdge<T>> Edges { get; }
     }
 }

@@ -1,8 +1,8 @@
 namespace DataStructures
 {
-    public class Node<T> : Node, INode<T>
+    public class Node<T> : INode<T>
     {
-        public Node(T nodeValue) : base(nodeValue)
+        public Node(T nodeValue)
         {
             _value = nodeValue;
         }
@@ -10,7 +10,7 @@ namespace DataStructures
 
 
         private readonly T _value;
-        public new T Value
+        public T Value
         {
             get { return _value; }
         }
