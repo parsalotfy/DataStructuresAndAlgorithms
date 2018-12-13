@@ -5,3 +5,4 @@
 *.props
 project.assets.json
 DataStructures/obj/DataStructures.csproj.nuget.g.props
+DataStructures/obj/Debug/netstandard2.0/DataStructures.AssemblyInfo.cs
