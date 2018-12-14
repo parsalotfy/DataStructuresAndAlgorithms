@@ -5,56 +5,56 @@ namespace DataStructures
 {
     public class Graph<T> : IGraph<T>
     {
-
-        public Graph()
-        {
-            _nodes = new HashSet<INode<T>>();
-            _edges = new HashSet<IEdge<T>>();
-        }
-
         public Graph(IEqualityComparer<INode<T>> nodeEqualityComparer,
                      IEqualityComparer<IEdge<T>> edgeEqualityComparer)
         {
             _nodes = new HashSet<INode<T>>(nodeEqualityComparer);
             _edges = new HashSet<IEdge<T>>(edgeEqualityComparer);
+
+            NodeTEqualityComparer = nodeEqualityComparer;
+            EdgeTEqualityComparer = edgeEqualityComparer;
         }
 
-        public Graph(Func<INode<T>, INode<T>, bool> nodeEqualityMethod,
-                    Func<INode<T>, int> nodeGetHashCodeMethod,
-                    Func<IEdge<T>, IEdge<T>, bool> edgeEqualityMethod,
-                    Func<IEdge<T>, int> edgeGetHashCodeMethod)
+        public Graph(
+            Func<INode<T>, INode<T>, bool> nodeEqualityMethod,
+            Func<INode<T>, int> nodeGetHashCodeMethod,
+            Func<IEdge<T>, IEdge<T>, bool> edgeEqualityMethod,
+            Func<IEdge<T>, int> edgeGetHashCodeMethod) : this(
+                new TEqualityComparer<INode<T>>(nodeEqualityMethod, nodeGetHashCodeMethod),
+                new TEqualityComparer<IEdge<T>>(edgeEqualityMethod, edgeGetHashCodeMethod)
+                )
         {
-            TEqualityComparer<INode<T>> nodeComparer =
-            new TEqualityComparer<INode<T>>(nodeEqualityMethod, nodeGetHashCodeMethod);
 
-            TEqualityComparer<IEdge<T>> edgeComparer =
-            new TEqualityComparer<IEdge<T>>(edgeEqualityMethod, edgeGetHashCodeMethod);
-
-            _nodes = new HashSet<INode<T>>(nodeComparer);
-            _edges = new HashSet<IEdge<T>>(edgeComparer);
         }
 
-        public Graph(IEnumerable<INode<T>> nodes, IEnumerable<IEdge<T>> edges)
+
+        public Graph(
+            IEnumerable<INode<T>> nodes,
+            IEnumerable<IEdge<T>> edges,
+            IEqualityComparer<INode<T>> nodeEqualityComparer,
+            IEqualityComparer<IEdge<T>> edgeEqualityComparer)
         {
-            _nodes = new HashSet<INode<T>>(nodes);
-            _edges = new HashSet<IEdge<T>>(edges);
+            _nodes = new HashSet<INode<T>>(nodes, nodeEqualityComparer);
+            _edges = new HashSet<IEdge<T>>(edges, edgeEqualityComparer);
+
+            NodeTEqualityComparer = nodeEqualityComparer;
+            EdgeTEqualityComparer = edgeEqualityComparer;
         }
+
 
         public Graph(IEnumerable<INode<T>> nodes,
                     IEnumerable<IEdge<T>> edges,
                     Func<INode<T>, INode<T>, bool> nodeEqualityMethod,
                     Func<INode<T>, int> nodeGetHashCodeMethod,
                     Func<IEdge<T>, IEdge<T>, bool> edgeEqualityMethod,
-                    Func<IEdge<T>, int> edgeGetHashCodeMethod)
+                    Func<IEdge<T>, int> edgeGetHashCodeMethod) : this(
+                        nodes,
+                        edges,
+                        new TEqualityComparer<INode<T>>(nodeEqualityMethod, nodeGetHashCodeMethod),
+                        new TEqualityComparer<IEdge<T>>(edgeEqualityMethod, edgeGetHashCodeMethod)
+                    )
         {
-            TEqualityComparer<INode<T>> nodeComparer =
-            new TEqualityComparer<INode<T>>(nodeEqualityMethod, nodeGetHashCodeMethod);
 
-            TEqualityComparer<IEdge<T>> edgeComparer =
-            new TEqualityComparer<IEdge<T>>(edgeEqualityMethod, edgeGetHashCodeMethod);
-
-            _nodes = new HashSet<INode<T>>(nodes, nodeComparer);
-            _edges = new HashSet<IEdge<T>>(edges, edgeComparer);
         }
 
 
@@ -72,6 +72,13 @@ namespace DataStructures
         {
             get { return _edges; }
         }
+
+
+        public IEqualityComparer<INode<T>> NodeTEqualityComparer { get; }
+        public IEqualityComparer<IEdge<T>> EdgeTEqualityComparer { get; }
+
+
+
 
         public bool AddNode(INode<T> node)
         {
@@ -93,20 +100,21 @@ namespace DataStructures
 
         }
 
-        public bool RemoveNode(INode<T> node, out int numberOfDeletedINodes)
+        public bool RemoveNode(INode<T> node, out int numberOfDeletedIEdges)
         {
             if (_nodes.Remove(node) == true)
             {
-                numberOfDeletedINodes = _edges.RemoveWhere(e => e.A_Node == node ||
-                                                            e.Another_Node == node);
+                numberOfDeletedIEdges = _edges.RemoveWhere(e =>
+                        NodeTEqualityComparer.Equals(e.A_Node, node) ||
+                        NodeTEqualityComparer.Equals(e.Another_Node, node));
+
                 return true;
             }
             else
             {
-                numberOfDeletedINodes = 0;
+                numberOfDeletedIEdges = 0;
                 return false;
             }
-
         }
 
 
