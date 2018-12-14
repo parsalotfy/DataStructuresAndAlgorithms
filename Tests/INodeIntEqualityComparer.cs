@@ -24,9 +24,9 @@ namespace Tests
             return x.Value == y.Value;
         }
 
-        public override int GetHashCode(INode<int> studentNode)
+        public override int GetHashCode(INode<int> n)
         {
-            return studentNode.Value.GetHashCode();
+            return n.Value.GetHashCode();
         }
     }
 }
