@@ -4,4 +4,22 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <id>DataStructuresAndAlgorithms.DataStructures</id>
+    <version>1.0.0</version>
+    <title>DataStructures</title>
+    <authors>Parsa Lotfi</authors>
+    <owners>Parsa Lotfi</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/parsalotfy/DataStructuresAndAlgorithms/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/parsalotfy/DataStructuresAndAlgorithms</projectUrl>
+    <description>Provide features for working with Data structures and related algotithms.</description>
+    <summary></summary>
+    <releaseNotes>First feature : Graph</releaseNotes>
+    <copyright></copyright>
+
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+  
+
 </Project>
