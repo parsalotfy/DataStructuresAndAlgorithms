@@ -1,9 +1,0 @@
-C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\DataStructures\bin\Debug\netstandard2.0\DataStructures.deps.json
-C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\DataStructures\bin\Debug\netstandard2.0\DataStructures.dll
-C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\DataStructures\bin\Debug\netstandard2.0\DataStructures.pdb
-C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\DataStructures\obj\Debug\netstandard2.0\DataStructures.csprojAssemblyReference.cache
-C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\DataStructures\obj\Debug\netstandard2.0\DataStructures.csproj.CoreCompileInputs.cache
-C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\DataStructures\obj\Debug\netstandard2.0\DataStructures.AssemblyInfoInputs.cache
-C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\DataStructures\obj\Debug\netstandard2.0\DataStructures.AssemblyInfo.cs
-C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\DataStructures\obj\Debug\netstandard2.0\DataStructures.dll
-C:\Users\Parsa\Desktop\DataStructuresAndAlgorithms\DataStructures\obj\Debug\netstandard2.0\DataStructures.pdb
