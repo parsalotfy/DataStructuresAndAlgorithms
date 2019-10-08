@@ -19,8 +19,7 @@ namespace DataStructures
             );
             _edges = new HashSet<IEdge<T>>(edgeEqualityComparer);
 
-            NodeTEqualityComparer = nodeEqualityComparer;
-            EdgeTEqualityComparer = edgeEqualityComparer;
+            _nodeTEqualityComparer = nodeEqualityComparer;
         }
 
 
@@ -70,10 +69,7 @@ namespace DataStructures
             get { return _edges; }
         }
 
-
-        public IEqualityComparer<T> NodeTEqualityComparer { get; }
-        public IEqualityComparer<IEdge<T>> EdgeTEqualityComparer { get; }
-
+        private readonly IEqualityComparer<T> _nodeTEqualityComparer;
 
         #endregion Properties
 
@@ -97,15 +93,15 @@ namespace DataStructures
             {
                 return false;
             }
-        }
+        }     
 
         public bool RemoveNode(T node, out int numberOfDeletedIEdges)
         {
             if (_nodes.Remove(node) == true)
             {
                 numberOfDeletedIEdges = _edges.RemoveWhere(e =>
-                        NodeTEqualityComparer.Equals(e.A_Node, node) ||
-                        NodeTEqualityComparer.Equals(e.Another_Node, node));
+                        _nodeTEqualityComparer.Equals(e.A_Node, node) ||
+                        _nodeTEqualityComparer.Equals(e.Another_Node, node));
 
                 return true;
             }
