@@ -93,7 +93,12 @@ namespace DataStructures
             {
                 return false;
             }
-        }     
+        }
+
+        public bool AddEdge(T aNode, T anotherNode)
+        {
+            return AddEdge(new Edge<T>(aNode, anotherNode));
+        }
 
         public bool RemoveNode(T node, out int numberOfDeletedIEdges)
         {
