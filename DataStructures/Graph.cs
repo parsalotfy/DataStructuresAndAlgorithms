@@ -114,6 +114,7 @@ namespace DataStructures
         }
 
         private readonly IEqualityComparer<T> _nodeTEqualityComparer;
+        private readonly IEqualityComparer<IEdge<T>> _edgeTEqualityComparer;
 
         #endregion Properties
 
