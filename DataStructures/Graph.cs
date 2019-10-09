@@ -157,41 +157,27 @@ namespace DataStructures
 
         public bool RemoveNode(T node, out int numberOfDeletedIEdges)
         {
-            if (_nodeTEqualityComparer == null)
-            {
-                if (_nodes.Remove(node) == true)
-                {
-                    numberOfDeletedIEdges = _edges.RemoveWhere(e => e.A_Node.Equals(node) || e.Another_Node.Equals(node));
 
-                    return true;
-                }
-                else
-                {
-                    numberOfDeletedIEdges = 0;
-                    return false;
-                }
+            if (_nodes.RemoveWhere(n => _nodeTEqualityComparer.Equals(n, node)) > 0)
+            {
+                numberOfDeletedIEdges = _edges.RemoveWhere(e =>
+                            _nodeTEqualityComparer.Equals(e.A_Node, node) ||
+                            _nodeTEqualityComparer.Equals(e.Another_Node, node));
+
+                return true;
             }
             else
             {
-                if (_nodes.RemoveWhere(n => _nodeTEqualityComparer.Equals(n, node)) > 0)
-                {
-                    numberOfDeletedIEdges = _edges.RemoveWhere(e =>
-                            _nodeTEqualityComparer.Equals(e.A_Node, node) ||
-                            _nodeTEqualityComparer.Equals(e.Another_Node, node));
-                    return true;
-                }
-                else
-                {
-                    numberOfDeletedIEdges = 0;
-                    return false;
-                }
+                numberOfDeletedIEdges = 0;
+                return false;
             }
+
         }
 
 
         public bool RemoveEdge(IEdge<T> edge)
         {
-            return _edges.Remove(edge);
+            return _edges.RemoveWhere(e => _edgeTEqualityComparer.Equals(e, edge)) > 0;
         }
 
         public void ClearGraph()
