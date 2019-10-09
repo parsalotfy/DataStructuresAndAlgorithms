@@ -195,6 +195,11 @@ namespace DataStructures
             return _edges.RemoveWhere(e => _edgeTEqualityComparer.Equals(e, edge)) > 0;
         }
 
+        public bool RemoveEdge(T aNode, T anotherNode)
+        {
+            return RemoveEdge(new Edge<T>(aNode, anotherNode));
+        }
+
         public void ClearGraph()
         {
             _edges.Clear();
