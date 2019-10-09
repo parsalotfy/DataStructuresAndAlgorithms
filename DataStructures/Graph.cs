@@ -7,6 +7,28 @@ namespace DataStructures
     {
         #region Constructors
 
+        // Primitive Graph Null
+        public Graph()
+        {
+            _nodes = new HashSet<T>();
+            _edges = new HashSet<IEdge<T>>();
+        }
+
+        // Primitive Graph Node
+        public Graph(IEnumerable<T> nodes) : this()
+        {
+            _nodes.UnionWith(nodes);
+        }
+
+        // Primitive Graph Node+Edge
+        public Graph(IEnumerable<T> nodes, IEnumerable<IEdge<T>> edges) : this(nodes)
+        {
+            _edges.UnionWith(edges);
+        }
+
+
+
+        // ADT Graph Null
         public Graph(IEqualityComparer<T> nodeEqualityComparer)
         {
             _nodes = new HashSet<T>(nodeEqualityComparer);
@@ -23,6 +45,7 @@ namespace DataStructures
         }
 
 
+        // ADT Graph Null(Lambada)
         public Graph(
             Func<T, T, bool> nodeEqualityMethod,
             Func<T, int> nodeGetHashCodeMethod)
@@ -31,19 +54,40 @@ namespace DataStructures
 
         }
 
-
+        // ADT Graph Node
         public Graph(
             IEnumerable<T> nodes,
-            IEnumerable<IEdge<T>> edges,
             IEqualityComparer<T> nodeEqualityComparer)
             : this(nodeEqualityComparer)
         {
             _nodes.UnionWith(nodes);
+        }
+
+        // ADT Graph Node(Lambada)
+        public Graph(
+            IEnumerable<T> nodes,
+            Func<T, T, bool> nodeEqualityMethod,
+            Func<T, int> nodeGetHashCodeMethod)
+            : this(nodes, new TEqualityComparer<T>(nodeEqualityMethod, nodeGetHashCodeMethod))
+        {
+
+        }
+
+
+        // ADT Graph Node+Edge
+        public Graph(
+            IEnumerable<T> nodes,
+            IEnumerable<IEdge<T>> edges,
+            IEqualityComparer<T> nodeEqualityComparer)
+            : this(nodes, nodeEqualityComparer)
+        {
             _edges.UnionWith(edges);
         }
 
 
-        public Graph(IEnumerable<T> nodes,
+        // ADT Graph Node+Edge(Lambada)
+        public Graph(
+            IEnumerable<T> nodes,
                     IEnumerable<IEdge<T>> edges,
                     Func<T, T, bool> nodeEqualityMethod,
                     Func<T, int> nodeGetHashCodeMethod)
