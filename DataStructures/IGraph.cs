@@ -4,7 +4,7 @@ namespace DataStructures
 {
     public interface IGraph<T>
     {
-        IEnumerable<INode<T>> Nodes { get; }
+        IEnumerable<T> Nodes { get; }
         IEnumerable<IEdge<T>> Edges { get; }
     }
 }

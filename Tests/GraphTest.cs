@@ -9,55 +9,42 @@ namespace Tests
     public class GraphTest
     {
         [Fact]
-        public void Graph_int_AddEdge_Test()
+        public void Graph_P_Null_AddNode_AddEdge()
         {
             // Arrange
-            Graph<int> intGraph = new Graph<int>((n1, n2) => n1.Value == n2.Value,
-                                                n => n.Value.GetHashCode(),
-                                                (e1, e2) => e1.A_Node.Value == e2.A_Node.Value &&
-                                                e1.Another_Node.Value == e2.Another_Node.Value,
-                                                e => e.A_Node.GetHashCode() ^
-                                                e.Another_Node.GetHashCode());
+            Graph<int> intGraph = new Graph<int>();
 
 
             // Act
-            intGraph.AddEdge(new Edge<int>(1, 6));
-            intGraph.AddEdge(new Edge<int>(2, 6));
-            intGraph.AddEdge(new Edge<int>(3, 6));
-            intGraph.AddEdge(new Edge<int>(4, 6));
-            intGraph.AddEdge(new Edge<int>(5, 6));
+            intGraph.AddNode(1);
+            intGraph.AddNode(2);
+            intGraph.AddNode(3);
+            intGraph.AddNode(4);
+            intGraph.AddNode(5);
+            intGraph.AddNode(6);
+
+            intGraph.AddEdge(1, 6);
+            intGraph.AddEdge(2, 6);
+            intGraph.AddEdge(3, 6);
+            intGraph.AddEdge(4, 6);
+            intGraph.AddEdge(5, 6);
+
+            intGraph.AddEdge(1, 1);
+            intGraph.AddEdge(2, 2);
+            intGraph.AddEdge(3, 3);
+            intGraph.AddEdge(4, 4);
+            intGraph.AddEdge(5, 5);
+
+            intGraph.RemoveNode(6);
+            intGraph.RemoveEdge(1, 1);
+            intGraph.RemoveEdge(2, 3);
+
 
 
             // Assert
-            Assert.Equal(6, intGraph.Nodes.Count());
-            Assert.Equal(5, intGraph.Edges.Count());
+            Assert.Equal(5, intGraph.Nodes.Count());
+            Assert.Equal(4, intGraph.Edges.Count());
         }
 
-
-
-        [Fact]
-        public void Graph_int_RemoveNode_Test()
-        {
-            // Arrange
-            Graph<int> intGraph = new Graph<int>((n1, n2) => n1.Value == n2.Value,
-                                                n => n.Value.GetHashCode(),
-                                                (e1, e2) => e1.A_Node.Value == e2.A_Node.Value &&
-                                                e1.Another_Node.Value == e2.Another_Node.Value,
-                                                e => e.A_Node.GetHashCode() ^
-                                                e.Another_Node.GetHashCode());
-            intGraph.AddEdge(new Edge<int>(1, 6));
-            intGraph.AddEdge(new Edge<int>(2, 6));
-            intGraph.AddEdge(new Edge<int>(3, 6));
-            intGraph.AddEdge(new Edge<int>(4, 6));
-            intGraph.AddEdge(new Edge<int>(5, 6));
-
-            // Act
-            int result;
-            bool isdeleted = intGraph.RemoveNode(new Node<int>(6), out result);
-
-
-            Assert.Equal(5,intGraph.Nodes.Count());
-            Assert.Equal(0,intGraph.Edges.Count());
-        }
     }
 }
