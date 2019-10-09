@@ -10,8 +10,17 @@ namespace DataStructures
         // Primitive Graph Null
         public Graph()
         {
-            _nodes = new HashSet<T>();
-            _edges = new HashSet<IEdge<T>>();
+            _nodeTEqualityComparer = new TEqualityComparer<T>((n1, n2) => n1.Equals(n2), (n) => n.GetHashCode());
+            _edgeTEqualityComparer = new TEqualityComparer<IEdge<T>>
+            (
+                (e1, e2) =>
+                (e1.A_Node.Equals(e2.A_Node) && e1.Another_Node.Equals(e2.Another_Node)) ||
+                (e1.A_Node.Equals(e2.Another_Node) && e1.Another_Node.Equals(e2.A_Node)),
+                (e) => e.A_Node.GetHashCode() ^ e.Another_Node.GetHashCode()
+            );
+
+            _nodes = new HashSet<T>(_nodeTEqualityComparer);
+            _edges = new HashSet<IEdge<T>>(_edgeTEqualityComparer);
         }
 
         // Primitive Graph Node
