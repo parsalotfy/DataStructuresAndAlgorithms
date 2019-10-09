@@ -88,9 +88,9 @@ namespace DataStructures
         // ADT Graph Node+Edge(Lambada)
         public Graph(
             IEnumerable<T> nodes,
-                    IEnumerable<IEdge<T>> edges,
-                    Func<T, T, bool> nodeEqualityMethod,
-                    Func<T, int> nodeGetHashCodeMethod)
+            IEnumerable<IEdge<T>> edges,
+            Func<T, T, bool> nodeEqualityMethod,
+            Func<T, int> nodeGetHashCodeMethod)
             : this(nodes, edges, new TEqualityComparer<T>(nodeEqualityMethod, nodeGetHashCodeMethod))
         {
 
@@ -144,20 +144,37 @@ namespace DataStructures
             return AddEdge(new Edge<T>(aNode, anotherNode));
         }
 
+
         public bool RemoveNode(T node, out int numberOfDeletedIEdges)
         {
-            if (_nodes.Remove(node) == true)
+            if (_nodeTEqualityComparer == null)
             {
-                numberOfDeletedIEdges = _edges.RemoveWhere(e =>
-                        _nodeTEqualityComparer.Equals(e.A_Node, node) ||
-                        _nodeTEqualityComparer.Equals(e.Another_Node, node));
+                if (_nodes.Remove(node) == true)
+                {
+                    numberOfDeletedIEdges = _edges.RemoveWhere(e => e.A_Node.Equals(node) || e.Another_Node.Equals(node));
 
-                return true;
+                    return true;
+                }
+                else
+                {
+                    numberOfDeletedIEdges = 0;
+                    return false;
+                }
             }
             else
             {
-                numberOfDeletedIEdges = 0;
-                return false;
+                if (_nodes.RemoveWhere(n => _nodeTEqualityComparer.Equals(n, node)) > 0)
+                {
+                    numberOfDeletedIEdges = _edges.RemoveWhere(e =>
+                            _nodeTEqualityComparer.Equals(e.A_Node, node) ||
+                            _nodeTEqualityComparer.Equals(e.Another_Node, node));
+                    return true;
+                }
+                else
+                {
+                    numberOfDeletedIEdges = 0;
+                    return false;
+                }
             }
         }
 
