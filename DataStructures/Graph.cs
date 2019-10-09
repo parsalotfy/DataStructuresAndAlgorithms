@@ -174,6 +174,21 @@ namespace DataStructures
 
         }
 
+        public bool RemoveNode(T node)
+        {
+            if (_nodes.RemoveWhere(n => _nodeTEqualityComparer.Equals(n, node)) > 0)
+            {
+                _edges.RemoveWhere(e =>
+                           _nodeTEqualityComparer.Equals(e.A_Node, node) ||
+                           _nodeTEqualityComparer.Equals(e.Another_Node, node));
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         public bool RemoveEdge(IEdge<T> edge)
         {
