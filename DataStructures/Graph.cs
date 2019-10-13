@@ -40,7 +40,6 @@ namespace DataStructures
         // ADT Graph Null
         public Graph(IEqualityComparer<T> nodeEqualityComparer)
         {
-            _nodes = new HashSet<T>(nodeEqualityComparer);
             TEqualityComparer<IEdge<T>> edgeEqualityComparer = new TEqualityComparer<IEdge<T>>
             (
                 (e1, e2) =>
@@ -48,9 +47,12 @@ namespace DataStructures
                 (nodeEqualityComparer.Equals(e1.A_Node, e2.Another_Node) && nodeEqualityComparer.Equals(e1.Another_Node, e2.A_Node)),
                 (e) => nodeEqualityComparer.GetHashCode(e.A_Node) ^ nodeEqualityComparer.GetHashCode(e.Another_Node)
             );
-            _edges = new HashSet<IEdge<T>>(edgeEqualityComparer);
 
             _nodeTEqualityComparer = nodeEqualityComparer;
+            _edgeTEqualityComparer = edgeEqualityComparer;
+
+            _nodes = new HashSet<T>(nodeEqualityComparer);
+            _edges = new HashSet<IEdge<T>>(edgeEqualityComparer);
         }
 
 
