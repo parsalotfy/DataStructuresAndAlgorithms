@@ -137,6 +137,15 @@ namespace DataStructures
             return _nodes.Add(node);
         }
 
+        // Not sure about this method.
+        public void AddNode(params T[] nodes)
+        {
+            foreach (T node in nodes)
+            {
+                AddNode(node);
+            }
+        }
+
         public bool AddEdge(IEdge<T> edge)
         {
             if (_edges.Add(edge) == true)
@@ -189,6 +198,15 @@ namespace DataStructures
             else
             {
                 return false;
+            }
+        }
+
+        // Not sure about this method.
+        public void RemoveNode(params T[] nodes)
+        {
+            foreach (T node in nodes)
+            {
+                RemoveNode(node);
             }
         }
 
