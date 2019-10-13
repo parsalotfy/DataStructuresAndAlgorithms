@@ -113,13 +113,13 @@ namespace DataStructures
         #region Properties
 
         private HashSet<T> _nodes;
-        public IEnumerable<T> Nodes
+        public ISet<T> Nodes
         {
             get { return _nodes; }
         }
 
         private HashSet<IEdge<T>> _edges;
-        public IEnumerable<IEdge<T>> Edges
+        public ISet<IEdge<T>> Edges
         {
             get { return _edges; }
         }
