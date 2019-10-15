@@ -165,7 +165,7 @@ namespace DataStructures
             return AddEdge(new Edge<T>(aNode, anotherNode));
         }
 
-
+        // Not sure about this method.
         public bool RemoveNode(T node, out int numberOfDeletedIEdges)
         {
 
