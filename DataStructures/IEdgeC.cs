@@ -1,6 +1,6 @@
 namespace DataStructures
 {
-    public interface IEdge<T>
+    public interface IEdgeC<T>
     {
         T A_Node { get; }
         T Another_Node { get; }

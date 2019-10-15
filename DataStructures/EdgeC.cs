@@ -1,10 +1,10 @@
 namespace DataStructures
 {
-    public class Edge<T> : IEdge<T>
+    public class EdgeC<T> : IEdgeC<T>
     {
         #region Constructors
 
-        public Edge(T a_Node, T another_Node)
+        public EdgeC(T a_Node, T another_Node)
         {
             _a_Node = a_Node;
             _another_Node = another_Node;

@@ -12,7 +12,7 @@ namespace Tests
         public void Graph_P_Null_AddNode_AddEdge_RemoveNode_RemoveEdge()
         {
             // Arrange
-            Graph<int> intGraph = new Graph<int>();
+            GraphC<int> intGraph = new GraphC<int>();
 
 
             // Act
@@ -51,7 +51,7 @@ namespace Tests
         public void Graph_ADT_Null_AddNode_AddEdge_RemoveNode_RemoveEdge()
         {
             // Arrange
-            Graph<Student> intGraph = new Graph<Student>((n1, n2) => n1.ID == n2.ID, n => n.ID.GetHashCode());
+            GraphC<Student> intGraph = new GraphC<Student>((n1, n2) => n1.ID == n2.ID, n => n.ID.GetHashCode());
 
             // Act
             intGraph.AddNode(new Student(1, "a", 15));

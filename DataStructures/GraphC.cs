@@ -3,15 +3,15 @@ using System.Collections.Generic;
 
 namespace DataStructures
 {
-    public class Graph<T> : IGraph<T>
+    public class GraphC<T> : IGraphC<T>
     {
         #region Constructors
 
         // Primitive Graph Null
-        public Graph()
+        public GraphC()
         {
             _nodeTEqualityComparer = new TEqualityComparer<T>((n1, n2) => n1.Equals(n2), (n) => n.GetHashCode());
-            _edgeTEqualityComparer = new TEqualityComparer<IEdge<T>>
+            _edgeTEqualityComparer = new TEqualityComparer<IEdgeC<T>>
             (
                 (e1, e2) =>
                 (e1.A_Node.Equals(e2.A_Node) && e1.Another_Node.Equals(e2.Another_Node)) ||
@@ -20,17 +20,17 @@ namespace DataStructures
             );
 
             _nodes = new HashSet<T>(_nodeTEqualityComparer);
-            _edges = new HashSet<IEdge<T>>(_edgeTEqualityComparer);
+            _edges = new HashSet<IEdgeC<T>>(_edgeTEqualityComparer);
         }
 
         // Primitive Graph Node
-        public Graph(IEnumerable<T> nodes) : this()
+        public GraphC(IEnumerable<T> nodes) : this()
         {
             _nodes.UnionWith(nodes);
         }
 
         // Primitive Graph Node+Edge
-        public Graph(IEnumerable<T> nodes, IEnumerable<IEdge<T>> edges) : this(nodes)
+        public GraphC(IEnumerable<T> nodes, IEnumerable<IEdgeC<T>> edges) : this(nodes)
         {
             _edges.UnionWith(edges);
         }
@@ -38,9 +38,9 @@ namespace DataStructures
 
 
         // ADT Graph Null
-        public Graph(IEqualityComparer<T> nodeEqualityComparer)
+        public GraphC(IEqualityComparer<T> nodeEqualityComparer)
         {
-            TEqualityComparer<IEdge<T>> edgeEqualityComparer = new TEqualityComparer<IEdge<T>>
+            TEqualityComparer<IEdgeC<T>> edgeEqualityComparer = new TEqualityComparer<IEdgeC<T>>
             (
                 (e1, e2) =>
                 (nodeEqualityComparer.Equals(e1.A_Node, e2.A_Node) && nodeEqualityComparer.Equals(e1.Another_Node, e2.Another_Node)) ||
@@ -52,12 +52,12 @@ namespace DataStructures
             _edgeTEqualityComparer = edgeEqualityComparer;
 
             _nodes = new HashSet<T>(nodeEqualityComparer);
-            _edges = new HashSet<IEdge<T>>(edgeEqualityComparer);
+            _edges = new HashSet<IEdgeC<T>>(edgeEqualityComparer);
         }
 
 
         // ADT Graph Null(Lambada)
-        public Graph(
+        public GraphC(
             Func<T, T, bool> nodeEqualityMethod,
             Func<T, int> nodeGetHashCodeMethod)
             : this(new TEqualityComparer<T>(nodeEqualityMethod, nodeGetHashCodeMethod))
@@ -66,7 +66,7 @@ namespace DataStructures
         }
 
         // ADT Graph Node
-        public Graph(
+        public GraphC(
             IEnumerable<T> nodes,
             IEqualityComparer<T> nodeEqualityComparer)
             : this(nodeEqualityComparer)
@@ -75,7 +75,7 @@ namespace DataStructures
         }
 
         // ADT Graph Node(Lambada)
-        public Graph(
+        public GraphC(
             IEnumerable<T> nodes,
             Func<T, T, bool> nodeEqualityMethod,
             Func<T, int> nodeGetHashCodeMethod)
@@ -86,9 +86,9 @@ namespace DataStructures
 
 
         // ADT Graph Node+Edge
-        public Graph(
+        public GraphC(
             IEnumerable<T> nodes,
-            IEnumerable<IEdge<T>> edges,
+            IEnumerable<IEdgeC<T>> edges,
             IEqualityComparer<T> nodeEqualityComparer)
             : this(nodes, nodeEqualityComparer)
         {
@@ -97,9 +97,9 @@ namespace DataStructures
 
 
         // ADT Graph Node+Edge(Lambada)
-        public Graph(
+        public GraphC(
             IEnumerable<T> nodes,
-            IEnumerable<IEdge<T>> edges,
+            IEnumerable<IEdgeC<T>> edges,
             Func<T, T, bool> nodeEqualityMethod,
             Func<T, int> nodeGetHashCodeMethod)
             : this(nodes, edges, new TEqualityComparer<T>(nodeEqualityMethod, nodeGetHashCodeMethod))
@@ -118,14 +118,14 @@ namespace DataStructures
             get { return _nodes; }
         }
 
-        private HashSet<IEdge<T>> _edges;
-        public ISet<IEdge<T>> Edges
+        private HashSet<IEdgeC<T>> _edges;
+        public ISet<IEdgeC<T>> Edges
         {
             get { return _edges; }
         }
 
         private readonly IEqualityComparer<T> _nodeTEqualityComparer;
-        private readonly IEqualityComparer<IEdge<T>> _edgeTEqualityComparer;
+        private readonly IEqualityComparer<IEdgeC<T>> _edgeTEqualityComparer;
 
         #endregion Properties
 
@@ -146,7 +146,7 @@ namespace DataStructures
             }
         }
 
-        public bool AddEdge(IEdge<T> edge)
+        public bool AddEdge(IEdgeC<T> edge)
         {
             if (_edges.Add(edge) == true)
             {
@@ -162,7 +162,7 @@ namespace DataStructures
 
         public bool AddEdge(T aNode, T anotherNode)
         {
-            return AddEdge(new Edge<T>(aNode, anotherNode));
+            return AddEdge(new EdgeC<T>(aNode, anotherNode));
         }
 
         // Not sure about this method.
@@ -210,14 +210,14 @@ namespace DataStructures
             }
         }
 
-        public bool RemoveEdge(IEdge<T> edge)
+        public bool RemoveEdge(IEdgeC<T> edge)
         {
             return _edges.RemoveWhere(e => _edgeTEqualityComparer.Equals(e, edge)) > 0;
         }
 
         public bool RemoveEdge(T aNode, T anotherNode)
         {
-            return RemoveEdge(new Edge<T>(aNode, anotherNode));
+            return RemoveEdge(new EdgeC<T>(aNode, anotherNode));
         }
 
         public void ClearGraph()
