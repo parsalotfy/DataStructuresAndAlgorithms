@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -19,8 +19,8 @@ namespace DataStructures
 
         public EdgeE(T a_Node, T another_Node)
         {
-            _a_Node = a_Node;
-            _another_Node = another_Node;
+            A_Node = a_Node;
+            Another_Node = another_Node;
         }
 
         #endregion Constructors
@@ -28,18 +28,10 @@ namespace DataStructures
 
         #region Properties
 
-        private readonly T _a_Node;
-        public T A_Node
-        {
-            get { return _a_Node; }
-        }
+        public T A_Node { get; }
 
 
-        private readonly T _another_Node;
-        public T Another_Node
-        {
-            get { return _another_Node; }
-        }
+        public T Another_Node { get; }
 
         #endregion Properties
 
