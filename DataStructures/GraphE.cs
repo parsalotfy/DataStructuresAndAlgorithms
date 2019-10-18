@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -33,13 +33,13 @@ namespace DataStructures
 
         #region Properties
 
-        private HashSet<T> _nodes;
+        private readonly HashSet<T> _nodes;
         public ISet<T> Nodes
         {
             get { return _nodes; }
         }
 
-        private HashSet<IEdgeE<T>> _edges;
+        private readonly HashSet<IEdgeE<T>> _edges;
         public ISet<IEdgeE<T>> Edges
         {
             get { return _edges; }
