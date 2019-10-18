@@ -12,7 +12,7 @@ namespace DataStructures
     // https://softwareengineering.stackexchange.com/questions/307999/can-i-enforce-the-overriding-of-gethashcode-and-equals-methods-for-users-of
     // https://stackoverflow.com/questions/49055673/should-gethashcode-be-implemented-for-iequatablet-on-mutable-types
 
-    public class EdgeE<T> : IEdgeE<T> where T : IEquatable<T>
+    public class EdgeE<T> : IEdgeE<T>, IEquatable<EdgeE<T>> where T : IEquatable<T>
     {
 
         #region Constructors
@@ -44,6 +44,12 @@ namespace DataStructures
             return (A_Node.Equals(other.A_Node) && Another_Node.Equals(other.Another_Node)) ||
                    (A_Node.Equals(other.Another_Node) && Another_Node.Equals(other.A_Node));
         }
+
+        public bool Equals(EdgeE<T> other)
+        {
+            return Equals(other as IEdgeE<T>);
+        }
+
 
         public override int GetHashCode()
         {
