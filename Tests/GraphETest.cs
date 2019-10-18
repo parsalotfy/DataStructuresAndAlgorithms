@@ -109,5 +109,59 @@ namespace Tests
             Assert.Equal(3, intGraph.Nodes.Count());
             Assert.Equal(2, intGraph.Edges.Count());
         }
+
+
+        [Fact]
+        public void EdgeE_Equality_Test()
+        {
+            // Arrange
+            IEdgeE<StudentE> l1 = new EdgeE<StudentE>(new StudentE(1, "a", 15), new StudentE(2, "b", 16));
+            IEdgeE<StudentE> l2 = new EdgeE<StudentE>(new StudentE(2, "b", 16), new StudentE(1, "a", 15));
+
+
+            // Act
+            bool isEqual = l1.Equals(l2);
+
+            // Assert
+            Assert.True(isEqual);
+
+        }
+
+
+        [Fact]
+        public void LabeledEdgeE_Equality_Test()
+        {
+            // Arrange
+            LabeledEdgeE<StudentE> l1 = new LabeledEdgeE<StudentE>(new StudentE(1, "a", 15), new StudentE(2, "b", 16), "salam");
+            LabeledEdgeE<StudentE> l2 = new LabeledEdgeE<StudentE>(new StudentE(2, "b", 16), new StudentE(1, "a", 15), "salam");
+
+
+            // Act
+            bool isEqual = l1.Equals(l2);
+
+            // Assert
+            Assert.True(isEqual);
+
+        }
+
+
+        [Fact]
+        public void WeightedEdgeE_Equality_Test()
+        {
+            // Arrange
+            WeightedEdgeE<StudentE> l1 = new WeightedEdgeE<StudentE>(new StudentE(1, "a", 15), new StudentE(2, "b", 16), 5);
+            WeightedEdgeE<StudentE> l2 = new WeightedEdgeE<StudentE>(new StudentE(2, "b", 16), new StudentE(1, "a", 15), 5);
+
+
+            // Act
+            bool isEqual = l1.Equals(l2);
+
+            // Assert
+            Assert.True(isEqual);
+
+        }
+
+
+
     }
 }
