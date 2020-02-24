@@ -3,7 +3,7 @@ name: Build DataStructures
 on: [push]
 
 jobs:
-  Build DataStructures:
+  Build_DataStructures:
 
     runs-on: ubuntu-latest
 
