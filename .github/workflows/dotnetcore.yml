@@ -13,7 +13,7 @@ jobs:
       with:
         dotnet-version: 2.2.108
     - name: Build_DataStructures with dotnet
-      run: dotnet build ${workspaceFolder}/DataStructures
+      run: dotnet build DataStructures
 
     - name: Run_Tests with dotnet
       run: dotnet test ${workspaceFolder}/Tests
