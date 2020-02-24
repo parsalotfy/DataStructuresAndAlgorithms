@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   Build_DataStructures:
-    runs-on: [ubuntu-latest,windows-latest]
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
@@ -15,7 +15,7 @@ jobs:
       run: dotnet build DataStructures
     
   Run_Tests:
-    runs-on: [ubuntu-latest,windows-latest]
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
