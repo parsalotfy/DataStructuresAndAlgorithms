@@ -9,6 +9,3 @@
 Tips:
 1. Open project by double clicking workspace file in **VSCode** and solution file in **VisualStudio** !
 2. **Immutable** Graph
-
-
-![.NET Core](https://github.com/parsalotfy/DataStructuresAndAlgorithms/workflows/.NET%20Core/badge.svg)
