@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace DataStructures
+namespace DataStructures.Equatable
 {
     public class WeightedEdgeE<T> : IWeightedEdgeE<T>, IEquatable<WeightedEdgeE<T>> where T : IEquatable<T>
     {

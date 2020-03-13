@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DataStructures
+namespace DataStructures.Equatable
 {
     // https://stackoverflow.com/questions/9316918/what-is-the-difference-between-iequalitycomparert-and-iequatablet
     // https://stackoverflow.com/questions/8952003/how-does-hashset-compare-elements-for-equality/15413983

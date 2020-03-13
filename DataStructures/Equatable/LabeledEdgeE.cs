@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DataStructures
+namespace DataStructures.Equatable
 {
     public class LabeledEdgeE<T> : ILabeledEdgeE<T>, IEquatable<LabeledEdgeE<T>> where T : IEquatable<T>
     {

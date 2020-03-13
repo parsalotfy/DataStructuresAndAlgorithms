@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DataStructures
+namespace DataStructures.Equatable
 {
     public interface IGraphE<T> where T : IEquatable<T>
     {
