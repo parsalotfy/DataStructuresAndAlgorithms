@@ -1,4 +1,5 @@
 ﻿using DataStructures;
+using DataStructures.Equatable;
 using System.Linq;
 using Xunit;
 
@@ -11,7 +12,7 @@ namespace Tests
         {
             // Arrange
             GraphE<int> intGraph = new GraphE<int>();
-
+            
 
             // Act
             intGraph.AddNode(1);
@@ -42,6 +43,39 @@ namespace Tests
             // Assert
             Assert.Equal(5, intGraph.Nodes.Count());
             Assert.Equal(4, intGraph.Edges.Count());
+        }
+
+
+        [Fact]
+        public void GetHashCodeTest()
+        {
+            int a1 = 5;
+            int a2 = 6;
+
+            int ghc1 = a1.GetHashCode() ^ a2.GetHashCode();
+            int ghc2 = a2.GetHashCode() ^ a1.GetHashCode();
+
+
+            var hashCode1 = -600697818;
+            hashCode1 = hashCode1 * -1521134295 + base.GetHashCode();
+            hashCode1 = hashCode1 * -1521134295 + a1.GetHashCode();
+            hashCode1 = hashCode1 * -1521134295 + a2.GetHashCode();
+
+
+            var hashCode2 = -600697818;
+            hashCode2 = hashCode2 * -1521134295 + base.GetHashCode();
+            hashCode2 = hashCode2 * -1521134295 + a2.GetHashCode();
+            hashCode2 = hashCode2 * -1521134295 + a1.GetHashCode();
+
+            int a = 0;
+
+        }
+
+        [Fact]
+        public void DirectedEdgeETest()
+        {
+            DirectedEdgeE<StudentE> directedEdgeE = new DirectedEdgeE<StudentE>(new StudentE(1, "a", 15), new StudentE(2, "b", 20));
+            directedEdgeE.
         }
 
 
