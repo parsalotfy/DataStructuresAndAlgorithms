@@ -25,12 +25,12 @@ namespace DataStructures.Equatable
         // interface IEquatablel
         public bool Equals(DirectedEdgeE<T> other)
         {
-            return Equals(other);
+            return Equals(other as IDirectedEdgeE<T>);
         }
 
         public override int GetHashCode()
         {
-            var hashCode = -600697818;
+            int hashCode = -600697818;
             hashCode = hashCode * -1521134295 + base.GetHashCode();
             hashCode = hashCode * -1521134295 + Source.GetHashCode();
             hashCode = hashCode * -1521134295 + Target.GetHashCode();
