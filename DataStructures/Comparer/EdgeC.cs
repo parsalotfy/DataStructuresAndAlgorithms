@@ -1,4 +1,4 @@
-namespace DataStructures
+namespace DataStructures.Comparer
 {
     public class EdgeC<T> : IEdgeC<T>
     {

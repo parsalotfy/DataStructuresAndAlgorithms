@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace DataStructures
+namespace DataStructures.Comparer
 {
     public class TEqualityComparer<T> : EqualityComparer<T>
     {

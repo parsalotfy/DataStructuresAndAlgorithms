@@ -1,4 +1,4 @@
-namespace DataStructures
+namespace DataStructures.Comparer
 {
     public interface IEdgeC<T>
     {

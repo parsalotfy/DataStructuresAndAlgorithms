@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace DataStructures
+namespace DataStructures.Comparer
 {
     public interface IGraphC<T>
     {
