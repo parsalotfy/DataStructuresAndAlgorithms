@@ -75,7 +75,6 @@ namespace Tests
         public void DirectedEdgeETest()
         {
             DirectedEdgeE<StudentE> directedEdgeE = new DirectedEdgeE<StudentE>(new StudentE(1, "a", 15), new StudentE(2, "b", 20));
-            directedEdgeE.
         }
 
 
