@@ -1,0 +1,16 @@
+﻿https://stackoverflow.com/questions/9316918/what-is-the-difference-between-iequalitycomparert-and-iequatablet
+https://stackoverflow.com/questions/8952003/how-does-hashset-compare-elements-for-equality/15413983
+https://stackoverflow.com/questions/58379115/iequatablet-with-gethashcode
+https://stackoverflow.com/questions/19791178/force-child-class-to-override-function-of-ancestor-via-parent
+https://docs.microsoft.com/en-us/dotnet/api/system.iequatable-1?view=netframework-4.8
+https://softwareengineering.stackexchange.com/questions/307999/can-i-enforce-the-overriding-of-gethashcode-and-equals-methods-for-users-of
+https://stackoverflow.com/questions/49055673/should-gethashcode-be-implemented-for-iequatablet-on-mutable-types
+
+
+https://www.youtube.com/watch?v=LsKIhuRJbtk&feature=youtu.be
+https://stackoverflow.com/questions/3289440/why-was-iequatable-t-not-made-contravariant-in-t-for-c-sharp-4-0
+https://stackoverflow.com/questions/5816563/when-should-i-choose-inheritance-over-an-interface-when-designing-c-sharp-class
+https://softwareengineering.stackexchange.com/questions/136319/whats-the-difference-between-implementing-an-interface-explicitly-or-implicitly
+https://stackoverflow.com/questions/598714/implicit-vs-explicit-interface-implementation/598727#598727
+https://stackoverflow.com/questions/598714/implicit-vs-explicit-interface-implementation
+https://docs.microsoft.com/en-us/visualstudio/code-quality/ca1061?view=vs-2019
