@@ -3,11 +3,11 @@
 namespace DataStructures.Version3
 {
     // One-Way
-    public class UnilateralEdgeE3<T> : IEquatable<UnilateralEdgeE3<T>> where T : IEquatable<T>
+    public class Unilateral_EdgeE3<T> : IEquatable<Unilateral_EdgeE3<T>> where T : IEquatable<T>
     {
         #region Constructors
 
-        public UnilateralEdgeE3(T source, T target)
+        public Unilateral_EdgeE3(T source, T target)
         {
             Source = source;
             Target = target;
@@ -30,7 +30,7 @@ namespace DataStructures.Version3
 
         #region IEquatable_Implementation
 
-        public bool Equals(UnilateralEdgeE3<T> other)
+        public bool Equals(Unilateral_EdgeE3<T> other)
         {
             return Source.Equals(other.Source) && Target.Equals(other.Target);
         }
