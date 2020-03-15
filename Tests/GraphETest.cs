@@ -1,5 +1,4 @@
-﻿using DataStructures;
-using DataStructures.Equatable;
+﻿using DataStructures.Equatable;
 using System.Linq;
 using Xunit;
 
