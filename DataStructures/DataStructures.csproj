@@ -20,6 +20,10 @@
 
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Version3\GraphGeneric\" />
+  </ItemGroup>
   
 
 </Project>
