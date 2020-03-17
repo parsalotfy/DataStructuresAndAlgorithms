@@ -14,3 +14,4 @@ https://softwareengineering.stackexchange.com/questions/136319/whats-the-differe
 https://stackoverflow.com/questions/598714/implicit-vs-explicit-interface-implementation/598727#598727
 https://stackoverflow.com/questions/598714/implicit-vs-explicit-interface-implementation
 https://docs.microsoft.com/en-us/visualstudio/code-quality/ca1061?view=vs-2019
+https://stackoverflow.com/questions/46541462/explicitly-marking-derived-class-as-implementing-interface-of-base-class
