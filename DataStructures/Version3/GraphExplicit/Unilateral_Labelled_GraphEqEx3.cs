@@ -44,9 +44,6 @@ namespace DataStructures.Version3.GraphExplicit
             get { return _edges; }
         }
 
-        // ?!?!????!
-        ISet<Unilateral_EdgeE3<T>> IGraphEqEx3<T>.Edges => throw new NotImplementedException();
-
 
 
         #endregion Properties
