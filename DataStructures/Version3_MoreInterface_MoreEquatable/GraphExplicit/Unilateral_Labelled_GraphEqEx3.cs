@@ -84,13 +84,6 @@ namespace DataStructures.Version3_MoreInterface_MoreEquatable.GraphExplicit
         }
 
 
-        public bool AddEdge(IEdgeE3<T> edge)
-        {
-            throw new NotImplementedException();
-        }
-
-
-
         public bool RemoveNode(T node)
         {
             if (_nodes.RemoveWhere(n => n.Equals(node)) > 0)
@@ -123,12 +116,6 @@ namespace DataStructures.Version3_MoreInterface_MoreEquatable.GraphExplicit
         public bool RemoveEdge(T aNode, T anotherNode, string label)
         {
             return RemoveEdge(new Unilateral_LabelledEdgeE3<T>(aNode, anotherNode, label));
-        }
-
-
-        public bool RemoveEdge(IEdgeE3<T> edge)
-        {
-            throw new NotImplementedException();
         }
 
         public void ClearGraph()
